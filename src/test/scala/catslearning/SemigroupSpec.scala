@@ -1,8 +1,8 @@
 package catslearning
 
-import org.scalatest.{Matchers, WordSpec}
 import cats.Semigroup
 import cats.implicits._
+import org.scalatest.{Matchers, WordSpec}
 
 class SemigroupSpec extends WordSpec with Matchers {
 
