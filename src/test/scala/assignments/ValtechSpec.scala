@@ -2,8 +2,6 @@ package assignments
 
 import org.scalatest.{Matchers, WordSpec}
 
-import scala.io.StdIn
-
 class ValtechSpec extends WordSpec with Matchers {
 
   private val alphabet: Set[Int] = (32 :: (97 to 122).toList).toSet
