@@ -1,12 +1,13 @@
 package various
 
 import org.scalacheck.{Arbitrary, Gen, Shrink}
-import org.scalatest.prop.GeneratorDrivenPropertyChecks
-import org.scalatest.{Matchers, WordSpec}
+import org.scalatest.matchers.should.Matchers
+import org.scalatest.wordspec.AnyWordSpec
+import org.scalatestplus.scalacheck.ScalaCheckPropertyChecks
 
 import scala.reflect.ClassTag
 
-class ScalacheckSpec extends WordSpec with GeneratorDrivenPropertyChecks with Matchers {
+class ScalacheckSpec extends AnyWordSpec with ScalaCheckPropertyChecks with Matchers {
 
   sealed trait Trait
 

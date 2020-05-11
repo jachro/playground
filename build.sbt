@@ -11,41 +11,30 @@
 lazy val compilerSettings = Seq(
   scalacOptions ++= Seq(
     "-language:higherKinds",
-    "-Ypartial-unification",
-    "-Yliteral-types",
     "-encoding", "UTF-8",
     "-language:implicitConversions",
     "-language:postfixOps",
     "-language:existentials"
-  ),
-  addCompilerPlugin("org.spire-math" %% "kind-projector" % "0.9.3"),
-  addCompilerPlugin("com.github.mpilquist" %% "simulacrum" % "0.10.0")
-)
-
-lazy val commonResolvers = Seq(
-  Resolver.sonatypeRepo("releases"),
-  Resolver.sonatypeRepo("snapshots"),
-  Resolver.jcenterRepo
+  )
+//  addCompilerPlugin("org.spire-math" %% "kind-projector" % "0.9.3"),
+//  addCompilerPlugin("com.github.mpilquist" %% "simulacrum" % "0.10.0")
 )
 
 lazy val buildSettings = Seq(
-  scalaOrganization := "org.typelevel",
-  scalaVersion := "2.12.1",
+  scalaVersion := "2.13.2",
   name := "exercises",
   version := "0.1.0-SNAPSHOT"
 )
 
-lazy val catsVersion = "0.9.0"
+lazy val catsVersion = "2.1.1"
 
 lazy val commonSettings = Seq(
-  resolvers := commonResolvers,
+//  resolvers := commonResolvers,
   libraryDependencies ++= Seq(
     "org.typelevel" %% "cats-core" % catsVersion,
     "org.typelevel" %% "cats-free" % catsVersion,
-    "com.chuusai" %% "shapeless" % "2.3.2",
 
-    "org.scalatest" %% "scalatest" % "3.0.1" % "test",
-    "org.scalacheck" %% "scalacheck" % "1.13.4" % "test"
+    "org.scalatestplus" %% "scalacheck-1-14" % "3.1.1.1" % Test
   )
 ) ++ compilerSettings
 

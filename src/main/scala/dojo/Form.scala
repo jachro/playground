@@ -1,6 +1,5 @@
 package dojo
 
-import cats._
 import cats.data._
 import cats.implicits._
 
@@ -23,7 +22,7 @@ object Person {
     val lastName: Validated[NonEmptyList[ValidationError], String] =
       if (form.lastName.length > 50) FirstNameLongerThanFiftyChars(form.lastName).invalidNel else form.lastName.validNel
 
-    (firstName, lastName, age).map3 {
+    (firstName, lastName, age).mapN {
       case (first, l, a) => Person(first, l, a)
     }
   }
